@@ -1,0 +1,82 @@
+html, body {
+	margin: 5;
+	font: bold 16px Helvetica;
+}
+
+#wrapper {
+	margin: auto;
+}
+
+#header {
+	height: 100px;
+}
+
+#content {
+	position: relative;
+	min-height: 600px;
+	margin-right: 150px;
+	border-style: solid solid none solid;
+	border-color: #94AA74;
+	border-size: 1px;
+	border-width: 1px;
+	/*background: grey;*/
+
+}
+
+.prodimg{
+float:left;
+margin-left: 10px;
+}
+
+.proddesc{
+margin-bottom: 18px;
+margin-left: 140px;
+margin-right: 140px;
+margin-top: 10px;
+font: 14px Helvetica;
+}
+
+#leftbar{
+	float: right;
+	width: 150px;
+	border-style: solid solid none solid;
+	border-color: #94AA74;
+	border-size: 1px;
+	border-width: 1px;
+}
+
+#leftbar ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+	
+#leftbar li a{
+	font: bold 14px Verdana, Arial, Helvetica, sans-serif;
+	display: block;
+	background: transparent url(../media/arrowgreen.gif) 100% 0;
+	height: 24px;
+	padding: 4px 0 4px 10px;
+	line-height: 24px; 
+	text-decoration: none;
+}	
+	
+#leftbar li a:link, .leftbar li a:visited {
+	color: #5E7830;
+}
+
+#leftbar li a:hover{
+	color: #26370A;
+	background-position: 100% -32px;
+}
+	
+#leftbar li a.selected{
+	color: #26370A;
+	background-position: 100% -64px;
+}
+
+#footer {
+	clear: both;
+	background: grey;
+	height: 30px;
+}
