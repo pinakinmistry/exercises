@@ -1,0 +1,70 @@
+
+html, body {
+	margin: 5;
+}
+
+#wrapper {
+	margin: auto;
+}
+
+#header {
+	width: 1250px;
+	font: 46px Helvetica;
+}
+
+#img1 {
+	float: left;
+}
+
+#img2 {
+	margin-left: 200px;
+	position: absolute;
+}
+
+#img3 {
+	float: right;
+}
+
+#title {
+	margin-top: 150px;
+	margin-left: 300px;	
+}
+
+#content {
+	width: 1250px;
+	font: 36px Helvetica;
+}
+
+.lefttext {
+	margin-left: 100px;
+	width: 450px;
+	height: 400px;
+	padding: .5em;
+	position: relative;
+	float: left;
+}
+	
+
+.rightimg {
+	margin-left: 10px;
+	padding: .5em;
+	position: relative;
+	float: left;
+}
+
+.leftimg {
+	margin-left: 100px;
+	padding: .5em;
+	position: relative;
+	float: left;
+}
+
+.righttext {
+	margin-left: 10px;
+	width: 450px;
+	height: 400px;
+	padding: .5em;
+	position: relative;
+	float: left;
+}
+
