@@ -1,0 +1,43 @@
+<html>
+<body>
+
+<script type="text/javascript">
+    
+    /*Program to get numbers between 1 and 100 that are divisible by both 2 and 3 */
+   
+    console.log("Numbers between 1 and 100 that are divisible by both 2 and 3");
+    var rem2, rem3;                
+    
+    /*For loop implementation*/
+   
+    console.log("*** Output using for loop ***");
+    for (var i=1; i <= 100; i++){
+        rem2 = i%2;
+        rem3 = i%3;
+     
+       if (rem2 == 0 && rem3 == 0)
+           console.log(i + " is divisible by both 2 and 3");
+    }
+   
+    console.log("***End of output using for loop ***");
+    
+    /*While loop implementation*/
+   
+    console.log("*** Output using while loop ***");
+    var i=1;
+    while (i <= 100){
+        rem2 = i%2;
+        rem3 = i%3;
+         
+       if (rem2 == 0 && rem3 == 0)
+           console.log(i + " is divisible by both 2 and 3");
+       
+       i++;           
+    }
+    
+    console.log("*** End of output using while loop ***");
+    
+</script>
+<b>See Console for results.</b>
+</body>
+</html>
