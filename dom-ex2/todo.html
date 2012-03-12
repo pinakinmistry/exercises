@@ -1,0 +1,45 @@
+<html lang="en"> 
+
+ <head>
+   <meta charset="UTF-8">
+   <title>Todo Application</title>
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <script type="text/javascript" src="javascript/app.js"></script>
+   <style type="text/css" media="all">@import "css/master.css";</style>
+
+ </head>
+
+ <body onLoad="OnLoadFunction();">
+ 	<div class="container">
+ 		<div id="righttop">
+			<label id="liststatus"><b>To Do Tasks: </b>0<br><b> Last Added at: </b></label>
+ 		</div>
+
+ 		<div id="googlesearch">
+ 			<form name="searchform">
+				<b>Web Search:</b>
+				<input type="text" name="searchtext">
+				<input type="button" value="Go!!" onClick="OpenGoogle();">
+ 			</form>
+ 		</div>
+
+		<h1>Todos</h1>
+
+		<h2>What needs to get done today?</h2>
+
+		<form name="taskform" onsubmit="javascript:AddToList();return false;">
+			<input type="text" name="task">
+			<label><i>(100 characters or lesser!)</i></label>
+	     		<br/>
+	     		<input type="button" value="Add Todo" onClick="AddToList();">
+			<label><i>(or just hit enter)</i></label>
+	     		<br/>
+		
+	     		<h2>My To Do List:</h2>		
+	     		<ol id="list">
+	     		</ol>
+		</form>
+	</div>
+ </body>
+</html>

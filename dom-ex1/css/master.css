@@ -1,0 +1,11 @@
+.container {
+ 	margin: 0 auto;
+    	width: 770px;
+}
+
+body {
+	background-color: #DEE9F6;
+    	background-image: url("http://l.yimg.com/a/i/us/dl/ie8/gr/landing_bg_10x450.gif");
+    	background-repeat: repeat-x;
+}
+

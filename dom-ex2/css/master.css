@@ -1,0 +1,23 @@
+.container {
+ 	margin: 0 auto;
+    	overflow: hidden;
+    	/*width: 1200px;*/
+}
+
+body {
+	background-color: #DEE9F6;
+    	background-image: url("http://l.yimg.com/a/i/us/dl/ie8/gr/landing_bg_10x450.gif");
+    	background-repeat: repeat-x;
+}
+
+#righttop {
+	margin-left: 850px;
+ 	border-style: none none solid none;
+	border-width: 1px;
+}
+
+#googlesearch {
+	margin-left: 850px;
+}
+
+
