@@ -1,0 +1,104 @@
+
+  <html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Document</title>
+      <!-- Include JQuery Library -->
+      <script type="text/javascript" src="jquery/jquery-1.7.1.min.js"></script>
+      <script type="text/javascript">
+          $("document").ready(function() {
+              // Get, Set & Change Content - html, text
+	      $("select").change(displayVals);
+	      
+              //Add, change attributes (class etc) - addClass, removeClass, attr etc.
+	      $('select').toggle(function() {
+        	      $("#status").addClass("selected highlight");
+		      }, function() {
+		              $("#status").removeClass("selected highlight");
+              });
+              $("#button1").click(function () {
+	      	      $("option").removeAttr("selected");
+		      displayVals();
+	      });
+
+	      // Add handling for creating elements, append, prepend and warp around elements
+              $("#button2").click(function () {
+	      	      $("p").after("<p><pre><i>    Above is a para</i></pre></p>");
+	      });
+
+              $("#button3").click(function () {
+	      	      $("p").append(document.createTextNode(" <- A para!"));
+	      });
+	      
+              $("#button4").click(function () {
+	      	      $("p").prepend(document.createTextNode("Para Starts -> "));
+	      });
+
+              $("#button5").toggle(function(){
+	      	      $("p").wrap("<div></div>");
+		      }, function(){
+			      $("p").unwrap();
+	      });
+
+              $("#button6").click(function(){
+		      $("p").clone().appendTo($("p:last"));
+	      });
+
+
+          });
+
+	  function displayVals() {
+	      var singleValues = $("#single").val();
+	      var multipleValues = $("#multiple").val() || [];
+	      $("p:first").html("<b>Single:</b> " + 
+                  singleValues +
+                  " <b>Multiple:</b> " + 
+                  multipleValues.join(", "));
+	  }
+	  
+
+      </script>
+      <style type="text/css">
+        .a { color: Navy; }
+        .b { color: Maroon;}
+        .selected { color:red; }
+	.highlight { background:yellow; }
+	div { border: 2px solid blue; background:yellow;}
+
+      </style>
+  </head>
+  <body>
+	 <p id="results">Selection Result will display here</p>
+	 <select id="single">
+	    <option>Single</option>
+	    <option>Single2</option>
+	 </select>
+
+	 <select id="multiple" multiple="multiple">
+	    <option selected="selected">Multiple</option>
+	    <option>Multiple2</option>
+	    <option selected="selected">Multiple3</option>
+	 </select>
+	 <button id="button1">Reset Selection</button>
+
+	
+
+      <ul id="list1">
+          <li class="a">item 1</li>
+          <li class="a">item 2</li>
+          <li class="b">item 3</li>
+          <li class="b">item 4</li>
+      </ul>
+      <b>Paras</b>
+      <p id="status">Selection Changed!</p>
+      <p class="a">This is paragraph 1</p>
+      <p>This is paragraph 2</p>
+      <p class="b">This is paragraph 3</p>
+      <button id="button2">Mark Paras</button>
+      <button id="button3">Append Paras</button>
+      <button id="button4">Prepend Paras</button>
+      <button id="button5">Wrap Paras</button>
+      <button id="button6">Clone Paras</button>
+   
+  </body>
+  </html>
+
