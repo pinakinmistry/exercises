@@ -1,0 +1,152 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <title>Document</title>
+  <!-- Add JQuery here -->
+  <script type="text/javascript" src="jquery/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript">
+      $("document").ready(function() {
+          // Example
+          // Use basic selectors, basic filters, attribute selectors, content filters, hierarchy filters
+
+	  //Select all elements
+	  $('#button1').toggle(function() {
+              $("*").css("border", "3px dotted red");
+          }, function() {
+              $("*").css("border", "");
+          });
+
+	  //Select by type
+          $('#button2').toggle(function() {
+              $("p").css("border", "3px solid red");
+          }, function() {
+              $("p").css("border", "");
+          });
+
+	  //Select by class
+          $('#button3').toggle(function() {
+              $(".a").css("border", "3px dotted red");
+          }, function() {
+              $(".a").css("border", "");
+          });
+
+	  //Select by class
+          $('#button4').toggle(function() {
+              $(".b").css("border", "3px solid red");
+          }, function() {
+              $(".b").css("border", "");
+          });
+
+	  //Select by id
+          $('#button5').toggle(function() {
+              $("#button5").css("border", "3px dotted red");
+          }, function() {
+              $("#button5").css("border", "");
+          });
+
+	  //Select by attribute
+          $('#button6').toggle(function() {
+              $("[class]").css("border", "3px solid red");
+          }, function() {
+              $("[class]").css("border", "");
+          });
+	
+          //Select first list element
+          $('#button7').toggle(function() {
+              $("li:first").css("border", "3px dotted red");
+          }, function() {
+              $("li:first").css("border", "");
+          });
+
+          //Select last list element
+          $('#button8').toggle(function() {
+              $("li:last").css("border", "3px solid red");
+          }, function() {
+              $("li:last").css("border", "");
+          });
+
+          //Select odd list element
+          $('#button9').toggle(function() {
+              $("li:odd").css("border", "3px dotted red");
+          }, function() {
+              $("li:odd").css("border", "");
+          });
+
+          //Select even list element
+          $('#button10').toggle(function() {
+              $("li:even").css("border", "3px solid red");
+          }, function() {
+              $("li:even").css("border", "");
+          });
+
+          //Select all parent elements
+          $('#button11').toggle(function() {
+              $(":parent").css("border", "3px dotted red");
+          }, function() {
+              $(":parent").css("border", "");
+          });
+
+          //Select all empty elements
+          $('#button12').toggle(function() {
+              $("li:empty").css("border", "3px solid red");
+          }, function() {
+              $("li:empty").css("border", "");
+          });
+
+	  //Select all hidden elements
+          $('#button13').toggle(function() {
+              $("div:hidden").show(1000);
+          }, function() {
+              $("div:hidden").css("border", "3px dotted red");
+          });
+
+          //Select all child elements
+          $('#button14').toggle(function() {
+              $("ul > li").css("border", "3px dotted red");
+          }, function() {
+              $("ul > li").css("border", "");
+          });
+
+
+      });
+
+  </script>
+  <style type="text/css">
+  .a { color: Navy; }
+  .b { color: Maroon; }
+  </style>
+  </head>
+  <body>
+      <ul id="list1">
+          <li class="a">list item 1 from class a</li>
+          <li class="a">list item 2 from class a</li>
+          <li class="b">list item 3 from class b</li>
+          <li class="b">list item 4 from class b</li>
+	  <li></li>
+      </ul>
+      <p class="a">This is paragraph 1 from class a</p>
+      <p>This is paragraph 2</p>
+      <p class="b">This is paragraph 3 from class b</p>
+      <p>This is paragraph 4</p>
+      <div style="display:none;">First hidden div</div>
+      <div style="display:none;">Another hidden div</div>
+      <div style="display:none;">Another hidden div</div>
+
+      <!-- Add multiple buttons for each selector -->
+      <input type="button" id="button1" value="Select all elements" />
+      <input type="button" id="button2" value="Select all Paras" />
+      <input type="button" id="button3" value="Select all class a" />
+      <input type="button" id="button4" value="Select all class b" />
+      <input type="button" id="button5" value="Select this button" /><hr>
+      <input type="button" id="button6" value="All with class attr" />
+      <input type="button" id="button7" value="First item in list" />
+      <input type="button" id="button8" value="Last item in list" />
+      <input type="button" id="button9" value="Even items in list" />
+      <input type="button" id="button10" value="Odd items in list" /><hr>
+      <input type="button" id="button11" value="Select all parents" />
+      <input type="button" id="button12" value="Select all empty" />
+      <input type="button" id="button13" value="All hidden items" />
+      <input type="button" id="button14" value="All child list items" />
+
+
+  </body>
+</html>

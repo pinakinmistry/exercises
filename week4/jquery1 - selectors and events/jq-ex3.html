@@ -1,0 +1,80 @@
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+  <html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Events with jQuery</title>
+      <script type="text/javascript" src="jquery/jquery-1.7.1.min.js"></script>
+      <script type="text/javascript">
+          $(function() {
+              // Bind highlight function on mouseover & mouseleave event on evtTarget element
+              $("#evtTarget").bind('mouseover',highlight);
+	      $("#evtTarget").bind('mouseleave',highlight);
+             
+	      // unbind highlight function on click event on evtTarget element
+      	      $("#evtTarget").bind('click',unhighlight);
+
+              $("button:first").click(function () {
+	      	update($("span:first"));
+	      });
+	  
+	      $("button:last").click(function () {
+	      	$("button:first").trigger('click');
+	      	update($("span:last"));
+	      });
+	      
+              //Question - In what scenarios we should use delegate instead of bind?	      
+              $("body").delegate("p", "click", function(){
+	      	alert( $(this).text() );
+	      });
+
+          });
+
+          function highlight(evt) {
+              $("#evtTarget").toggleClass("highlighted");
+          }
+
+	  function unhighlight(evt) {
+      	      $("#evtTarget").unbind();
+          }
+
+	  function update(j) {
+	  	var n = parseInt(j.text(), 10);
+		j.text(n + 1);
+	  }
+
+      </script>
+      <style type='text/css'>
+          .normal {
+              width: 300px;
+              height: 200px;
+              background-color: Yellow;
+              font-size: 18pt;
+          }
+
+          .highlighted {
+              background-color: Red;
+          }
+
+	  button { margin:10px; }
+	  div { color:blue; font-weight:bold; }
+	  span { color:red; }
+	  p { font-weight:bold; color:blue; cursor:pointer; padding:2px; }
+
+
+      </style>
+  </head>
+  <body>
+	  <h1>Binding Event Example</h1>	
+	  <div id="evtTarget" class="normal">Mouse over this div to see the effect. Click on it to unbind the mouseover.</div>
+	  <button>Button #1</button>
+	  <button>Button #2</button>
+	  <div><span>0</span> button #1 clicks.</div>
+	  <div><span>0</span> button #2 clicks.</div>
+
+	  <p>Para 1</p>
+	  <p>Para 2</p>
+	  <p>Para 3</p>
+	  <p>Para 4</p>
+  </body>
+  </html>
