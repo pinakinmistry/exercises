@@ -1,0 +1,36 @@
+<html>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+var availableProducts = [
+"PD43-102M",
+"PD43-182M",
+"PD43-222M",
+"PD43-272M",
+"PD43-332M",
+"PD43-392M",
+"PD43-472M",
+"PD43-562M",
+"PD43-103M",
+"PD43-123M",
+];
+$( "#tags" ).autocomplete({
+source: availableProducts
+});
+});
+</script>
+
+</head>
+
+<body>
+<div class="demo">
+<div class="ui-widget">
+<input id="tags"><input type="button" id="button1" value="Find Product"/>
+</div>
+</div>
+</body>
+</html>

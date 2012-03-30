@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <title>Document</title>
+  <!-- Add JQuery here -->
+  <script type="text/javascript" src="jquery/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript">
+
+    jQuery.fn.makeAllCaps = function () {
+		$.each(this, function () {
+			var split = this.value.split(' ');
+			for (var i = 0, len = split.length; i < len; i++) {
+				split[i] = split[i].toUpperCase();
+			}
+			this.value = split.join(' ');
+		});
+	};
+
+
+	$("document").ready(function() {
+		$('#makecaps').click(function() {
+			$('#inputtext').makeAllCaps();
+		});
+    });
+
+  </script>
+  
+  </head>
+  <body>
+      <textarea id="inputtext" cols="100"></textarea>
+      <input type="button" id="makecaps" value="Make all words capital" />
+      
+  </body>
+</html>

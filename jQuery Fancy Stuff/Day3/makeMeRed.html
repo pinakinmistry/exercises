@@ -1,0 +1,34 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <title>Document</title>
+  <!-- Add JQuery here -->
+  <script type="text/javascript" src="jquery/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript">
+
+    jQuery.fn.makeMeRed = function(){
+		this.css("color", "red");
+	};
+
+	$("document").ready(function() {
+		$('#makeparasred').click(function() {
+			$("p").makeMeRed();
+		});
+    });
+
+  </script>
+  
+  </head>
+  <body>
+      <label>Para1 </label>
+	  <p>This is paragraph 1</p>
+	  <label>Para2 </label>
+      <p>This is paragraph 2</p>
+      <label>Para3 </label>
+      <p>This is paragraph 3</p>
+      <label>Para4 </label>
+      <p>This is paragraph 4</p>
+     
+      <input type="button" id="makeparasred" value="Make all paras red" />
+      
+  </body>
+</html>

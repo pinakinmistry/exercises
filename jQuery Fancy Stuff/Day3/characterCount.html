@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <title>Document</title>
+  <!-- Add JQuery here -->
+  <script type="text/javascript" src="jquery/jquery-1.7.1.min.js"></script>
+  <script>
+    
+    jQuery.fn.CharCount = function(){
+		var maxlen=150;
+		//for each keypress function on text areas
+		this.keypress(function() {
+		var len = this.value.length+1;
+		var charleft;
+		var message;
+		if (len > maxlen) {
+			this.value = this.value.substring(0, maxlen-1);
+		}
+		else {
+			charleft = maxlen - len;
+			message="You have " + charleft + " chars left.";
+			$('#charNum').text(message);
+		}
+		});
+	};
+
+	$(document).ready(function() {
+		$('#field').CharCount();
+	});
+		
+  </script>
+</head>
+<body>
+
+<textarea id="field" cols="100"></textarea>
+<div id="charNum">
+</div>
+</body>
+</html>

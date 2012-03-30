@@ -1,0 +1,89 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>jQuery validation plug-in - comment form example</title>
+
+<link rel="stylesheet" type="text/css" media="screen" href="css/screen.css" />
+
+<script type="text/javascript" src="jquery/jquery-1.7.1.min.js"></script>
+<script src="jquery/jquery.validate.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+	$("#commentForm").validate({
+		meta: "validate"
+		,rules: {
+			cbgroup : {
+				required: true,
+				minlength: 2
+			}
+		}
+		,messages:{
+			cbgroup : "Please select at least two topics you'd like to receive."
+		}
+	});
+
+	$("#nletter").click(function(){
+		if ($('#nletter').attr('checked')){
+			$("#nlettersp").show(); }
+		else {
+			$("#nlettersp").hide(); } 
+	
+	});
+});
+
+</script>
+
+<style type="text/css">
+form label { width: 400px; }
+
+</style>
+
+
+</head>
+<body>
+
+
+<div id="main">
+
+<form class="cmxform" id="commentForm" method="post" action="">
+
+<label >Firstname </label>
+<input name="firstname" class="required" title="Please enter your firstname"/>
+<br>
+<label >Lastname </label>
+<input name="lastname" class="required" title="Please enter your lastname"/>
+<br>
+<label >Username </label>
+<input name="username" class="required" title="Please enter your username"/>
+<br>
+<label >Password </label>
+<input type="password" name="password" class="required" title="Please enter your password"/>
+<br>
+<label >Confirm password </label>
+<input type="password" name="password2" class="required" title="Please enter your password"/>
+<br>
+<label for="cemail">E-Mail </label>
+<input id="cemail" name="email" class="{validate:{required:true, email:true, messages:{required:'Please enter your email address', email:'Please enter a valid email address'}}}"/>
+<br>
+<label >Please agree to our policy </label>
+<input id="policy" type="checkbox" name="policy" class="required" title="Please accept our policy"/>
+<br>
+<label >I would like to receive the newsletter </label>
+<input id="nletter" type="checkbox"/>
+<br>
+<p id="nlettersp" hidden="true">
+<label >Topic (select atleast 2) </label><br>
+                  <input id="Checkbox1" name="cbgroup" type="checkbox"/><label for="Checkbox1">Marketflash</label><br/>
+                  <input id="Checkbox2" name="cbgroup" type="checkbox"/><label for="Checkbox1">Latest fuzz</label><br/>
+                  <input id="Checkbox3" name="cbgroup" type="checkbox"/><label for="Checkbox1">Mailing list digester</label><br/>
+                  <label class="error" for="cbgroup" style="display:none;" generated="true">Please select atleast 2 topics</label>
+</p>
+<p>
+<input class="submit" type="submit" value="Submit"/>
+</p>
+</form>
+
+</body>
+</html>

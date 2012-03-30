@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <title>Document</title>
+  <!-- Add JQuery here -->
+  <script type="text/javascript" src="jquery/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript">
+      $("document").ready(function() {
+	  $('#button1').click(function() {
+              loadTweets();
+          });
+      });
+
+function loadTweets() 
+{ 
+    // Display a loading icon in our display element 
+    //$('#feed').html('<SPAN><IMG alt="" src="/blog/images/lightbox-ico-loading.gif"></SPAN>'); 
+  
+    // Request the JSON and process it 
+    //alert("Inside function");
+    $.ajax({ 
+        type:'GET', 
+        url:"http://twitter.com/status/user_timeline/jquery.json", 
+        success:function(feed) { 
+
+	    //alert(outfeed);
+            // Create an empty array to store images 
+            //var thumbs = []; 
+  
+            // Loop through the items 
+            for(var i=0, l=feed.length; i < l && i < 10;   i++)  
+            { 
+		//alert(feed[i].text);
+		tweetlist = document.getElementById("list");
+	        newtweet = document.createElement('li');
+	        tweet=document.createTextNode(feed[i].text);
+         	newtweet.appendChild(tweet);
+	        tweetlist.appendChild(newtweet);
+                // Manipulate the image to get thumb and medium sizes 
+  
+                // Add the new element to the array 
+                //thumbs.push(img); 
+            } 
+  
+            // Display the thumbnails on the page 
+            //$('#feed').html(thumbs.join('')); 
+  
+            // A function to add a lightbox effect 
+            //addLB(); */
+        }, 
+        dataType:'jsonp'
+    }); 
+}
+
+  </script>
+  <style type="text/css">
+  .a { color: Navy; }
+  .b { color: Maroon; }
+  </style>
+  </head>
+  <body>
+   <!-- Add multiple buttons for each selector -->
+   <input type="button" id="button1" value="Get Tweets using AJAX" /><br><br>
+   <h2>Tweet List:</h2>
+   <ul id="list">
+   </ul>
+    
+  </body>
+</html>
